@@ -1,0 +1,12 @@
+<p>Imagenes desde mongoDB y Node.js</p>
+<div *ngIf="apartments.length>0">
+    <div *ngFor="let apartment of apartments">
+        <div>
+            <span>{{ apartment.idApartment }}</span>
+        </div>
+        <div>
+            <img class="img-paths" *ngFor="let images of apartment.imageRutas" [src]="images">
+        </div>
+        <input type="file">
+    </div>
+</div>

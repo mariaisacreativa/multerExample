@@ -4,9 +4,7 @@ const {storage, storageMultiple} = require("../midleware/storage");
 
 const router = express.Router();
 
-router.get('/', (req,res)=>{
-    res.send({"msg":"todo correcto"})
-});
+router.get('/', imageController.getImages);
 router.post('/', storage, imageController.postImage)
 router.post('/multiple', storageMultiple, imageController.postMultipleImage )
 

@@ -1,6 +1,11 @@
 const Image = require("../models/image");
 const imageMultiple = require("../models/imageMultiple");
 
+getImages = async (req, res)=>{
+    const images = await imageMultiple.find();
+    res.status(200).json(images);
+}
+
 postImage = async (req, res)=>{
     console.log("req.file: " +req.file)
     const {nombre} = req.body;
@@ -33,13 +38,14 @@ postMultipleImage = async (req, res)=>{
 
     const imagenesCreada = await image.save();
     res.status(200).json({
-        image: {
+        apartment: {
             ...imagenesCreada._doc  //spread operator
         }
     })
 }
 
 module.exports = {
+    getImages,
     postImage,
     postMultipleImage
 }
