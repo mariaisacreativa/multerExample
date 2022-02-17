@@ -38,9 +38,7 @@ postMultipleImage = async (req, res)=>{
 
     const imagenesCreada = await image.save();
     res.status(200).json({
-        apartment: {
-            ...imagenesCreada._doc  //spread operator
-        }
+        ...imagenesCreada._doc  //spread operator
     })
 }
 

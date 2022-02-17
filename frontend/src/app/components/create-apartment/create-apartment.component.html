@@ -1,0 +1,17 @@
+<p>create-apartment</p>
+<hr>
+<form [formGroup]="form" (submit)="createApartment()">
+    <div>
+        <input formControlName="idApartment" type="text" placeholder="Ingresar id de apartamento (direccion)">
+    </div>
+    <div>
+        <input (change)="onChangeInput($event)" formControlName="images" type="file" multiple>
+    </div>
+    <br>
+    <div>
+        <button type="submit">Crear apartamento</button>
+    </div>
+</form>
+
+<br>
+<hr>
